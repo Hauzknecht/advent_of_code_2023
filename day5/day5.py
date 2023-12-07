@@ -1,4 +1,4 @@
-file = open("input.txt", "r")
+file = open("test_input.txt", "r")
 segments = file.read().split("\n\n")
 seeds = [ int(x) for x in segments[0].split(":")[1].strip().split(" ")]
 mapping = []
@@ -22,3 +22,8 @@ destinations = []
 for seed in seeds:
     destinations.append(src_dest(seed))
 print("Minimal destination is", min(destinations))
+
+r = []
+for i in range(0,len(seeds),2):
+    r.append((seeds[i],seeds[i]+seeds[i+1]))
+print(r)
