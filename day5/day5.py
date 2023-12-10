@@ -10,6 +10,9 @@ for segment in segments[1:]:
         tmp.append(tmp1)
     mapping.append(tmp)
 
+for map_ in mapping:
+    print(map_)
+
 def src_dest(seed):
     for _map in mapping:
         for _range in _map:
@@ -25,5 +28,13 @@ print("Minimal destination is", min(destinations))
 
 r = []
 for i in range(0,len(seeds),2):
-    r.append((seeds[i],seeds[i]+seeds[i+1]))
+    r.append((seeds[i],seeds[i]+seeds[i+1]-1))
 print(r)
+"""
+def get_ranges(range_,map_):
+    r = []
+    for ran in map_:
+        if range_[0] >= map_[1] and range_[1] < (map_[1]+map_[2]):
+            r.append(map_[0]+range_[0]-map_[1],map_[0]+range_[1]-map_[1])
+        if range_[0] < map_
+"""
